@@ -13,24 +13,24 @@ import { episode11 } from "./ts/episode-11"
 import { episode12 } from "./ts/episode-12"
 import { episode13 } from "./ts/episode-13"
 
-const episodes: Record<string, () => void> = {
-  "Episode-1": episode1,
-  "Episode-2": episode2,
-  "Episode-3": episode3,
-  "Episode-4": episode4,
-  "Episode-5": episode5,
-  "Episode-6": episode6,
-  "Episode-7": episode7,
-  "Episode-8": episode8,
-  "Episode-9": episode9,
-  "Episode-10": episode10,
-  "Episode-11": episode11,
-  "Episode-12": episode12,
-  "Episode-13": episode13,
-};
+const episodes: Array<() => void> = [
+  episode1,
+  episode2,
+  episode3,
+  episode4,
+  episode5,
+  episode6,
+  episode7,
+  episode8,
+  episode9,
+  episode10,
+  episode11,
+  episode12,
+  episode13,
+];
 
-Object.entries(episodes).forEach(([buttonId, runEpisode]) => {
-  const button = document.getElementById(buttonId);
+const buttons = Array.from(document.querySelectorAll("aside button"));
 
-  button?.addEventListener("click", runEpisode);
+buttons.forEach((button, index) => {
+  button.addEventListener("click", episodes[index]);
 });
