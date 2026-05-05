@@ -1,3 +1,4 @@
+// Importations
 import "./css/style.css"
 import { episode1 } from "./ts/episode-1"
 import { episode2 } from "./ts/episode-2"
